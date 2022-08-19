@@ -4347,10 +4347,10 @@ JNIEXPORT void JNICALL Java_com_artifex_mupdf_fitz_Pixmap_clearWithValue
 /*
  * Class:     com_artifex_mupdf_fitz_Pixmap
  * Method:    saveAsPNG
- * Signature: (Ljava/lang/String;)V
+ * Signature: (Ljava/lang/String;I)V
  */
 JNIEXPORT void JNICALL Java_com_artifex_mupdf_fitz_Pixmap_saveAsPNG
-  (JNIEnv *, jobject, jstring);
+  (JNIEnv *, jobject, jstring, jint);
 
 /*
  * Class:     com_artifex_mupdf_fitz_Pixmap

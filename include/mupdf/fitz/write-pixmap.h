@@ -223,7 +223,7 @@ void fz_save_pixmap_as_pdfocr(fz_context *ctx, fz_pixmap *pixmap, char *filename
 /**
 	Save a (Greyscale or RGB) pixmap as a png.
 */
-void fz_save_pixmap_as_png(fz_context *ctx, fz_pixmap *pixmap, const char *filename);
+void fz_save_pixmap_as_png(fz_context *ctx, fz_pixmap *pixmap, const char *filename, int append);
 
 /**
 	Write a (Greyscale or RGB) pixmap as a png.

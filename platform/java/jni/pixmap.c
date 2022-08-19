@@ -82,7 +82,7 @@ FUN(Pixmap_clearWithValue)(JNIEnv *env, jobject self, jint value)
 }
 
 JNIEXPORT void JNICALL
-FUN(Pixmap_saveAsPNG)(JNIEnv *env, jobject self, jstring jfilename)
+FUN(Pixmap_saveAsPNG)(JNIEnv *env, jobject self, jstring jfilename, jint append)
 {
 	fz_context *ctx = get_context(env);
 	fz_pixmap *pixmap = from_Pixmap(env, self);
@@ -95,7 +95,7 @@ FUN(Pixmap_saveAsPNG)(JNIEnv *env, jobject self, jstring jfilename)
 	if (!filename) return;
 
 	fz_try(ctx)
-		fz_save_pixmap_as_png(ctx, pixmap, filename);
+		fz_save_pixmap_as_png(ctx, pixmap, filename, append);
 	fz_always(ctx)
 		(*env)->ReleaseStringUTFChars(env, jfilename, filename);
 	fz_catch(ctx)

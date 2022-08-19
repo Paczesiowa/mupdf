@@ -3437,9 +3437,10 @@ static void ffi_Pixmap_saveAsPNG(js_State *J)
 	fz_context *ctx = js_getcontext(J);
 	fz_pixmap *pixmap = js_touserdata(J, 0, "fz_pixmap");
 	const char *filename = js_tostring(J, 1);
+	int append = js_tointeger(J, 2);
 
 	fz_try(ctx)
-		fz_save_pixmap_as_png(ctx, pixmap, filename);
+		fz_save_pixmap_as_png(ctx, pixmap, filename, append);
 	fz_catch(ctx)
 		rethrow(J);
 }
@@ -8422,7 +8423,7 @@ int murun_main(int argc, char **argv)
 		// Pixmap.gamma
 		// Pixmap.scale()
 
-		jsB_propfun(J, "Pixmap.saveAsPNG", ffi_Pixmap_saveAsPNG, 1);
+		jsB_propfun(J, "Pixmap.saveAsPNG", ffi_Pixmap_saveAsPNG, 2);
 		// Pixmap.saveAsPNM, PAM, PWG, PCL
 
 		// Pixmap.halftone() -> Bitmap

@@ -76,7 +76,7 @@ static void writepixmap(fz_pixmap *pix, char *file)
 	{
 		fz_snprintf(buf, sizeof(buf), "%s.png", file);
 		printf("extracting %s\n", buf);
-		fz_save_pixmap_as_png(ctx, pix, buf);
+		fz_save_pixmap_as_png(ctx, pix, buf, 0);
 	}
 	else
 	{

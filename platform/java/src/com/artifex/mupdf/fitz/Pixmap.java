@@ -72,7 +72,7 @@ public class Pixmap
 		clearWithValue(value);
 	}
 
-	public native void saveAsPNG(String filename);
+	public native void saveAsPNG(String filename, int append);
 
 	public native int getX();
 	public native int getY();

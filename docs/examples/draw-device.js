@@ -42,4 +42,4 @@ var transform = [2,0,0,2,0,0]
 }
 device.close();
 
-pixmap.saveAsPNG("out.png");
+pixmap.saveAsPNG("out.png", 0);

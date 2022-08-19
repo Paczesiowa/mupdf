@@ -5,5 +5,5 @@ var n = doc.countPages();
 for (var i = 0; i < n; ++i) {
 	var page = doc.loadPage(i);
 	var pixmap = page.toPixmap(Identity, DeviceRGB);
-	pixmap.saveAsPNG("out" + (i+1) + ".png");
+	pixmap.saveAsPNG("out" + (i+1) + ".png", 0);
 }

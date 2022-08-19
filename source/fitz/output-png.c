@@ -51,9 +51,9 @@ static void putchunk(fz_context *ctx, fz_output *out, char *tag, unsigned char *
 }
 
 void
-fz_save_pixmap_as_png(fz_context *ctx, fz_pixmap *pixmap, const char *filename)
+fz_save_pixmap_as_png(fz_context *ctx, fz_pixmap *pixmap, const char *filename, int append)
 {
-	fz_output *out = fz_new_output_with_path(ctx, filename, 0);
+	fz_output *out = fz_new_output_with_path(ctx, filename, append);
 	fz_band_writer *writer = NULL;
 
 	fz_var(writer);
